@@ -58,9 +58,9 @@ Specifically, parts of ShapeNet, SUNCG, ScanNet, and Matterport3D were all devel
 - `scene-viewer.html` : Scene Viewer
 
 ## Development To-Do
-* Add Draco Compression support
-  [ ] Write a script that supports converting a batch of `.ply` models to `.drc` format.
-  [ ] Add Draco decording support on server side and feed the 3D data into annotation pipeline.
+- Add Draco Compression support
+  - [ ] Write a script that supports converting a batch of `.ply` models to `.drc` format.
+  - [ ] Add Draco decording support on server side and feed the 3D data into annotation pipeline.
 
 Advanced Build Instructions
 ==================
