@@ -32,6 +32,41 @@ There are some prerequisites for the build process in Ubuntu, they can be instal
 
 3. Visit http://localhost:8010 in your browser (Chrome is recommended)!
 
+## MySQL database setup guide
+1. Install MySQL database on your PC (example OS: Ubuntu 16.04)
+```
+sudo apt update
+sudo apt install mysql-server
+sudo mysql_secure_installation # Configure db security
+```
+2. Create database and tables
+```
+sudo mysql -p
+mysql> CREATE DATABASE scannet;
+mysql> USE scannet;
+mysql> SOURCE /PATH_TO_SSTK/scripts/db/create_annotation_cleaned.sql
+mysql> SOURCE /PATH_TO_SSTK/scripts/db/create_annotation_tables.sql
+mysql> SOURCE /PATH_TO_SSTK/scripts/db/create_part_annotation_tables.sql
+```
+
+## NYUv2 Example setup guide
+1. Execute the getexamples script:
+```
+# Under sstk/ folder
+./getexamples.sh
+```
+2. Edit server config file:
+```
+vim sstk/server/config/index.js
+vim> config.annDb = { host: 'localhost', user: 'root', password: 'PASSWORD', database: 'scannet' };
+```
+Change the user name and password to yours.
+3. Run server:
+```
+cd SSTK/server/
+./run.sh
+```
+4. Go to link: http://localhost:8010/scans/nyuv2
 
 ## Assets
 To use the STK, you will need to get yourself some assets.  There are several open-source datasets that
