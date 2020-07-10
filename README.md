@@ -61,6 +61,7 @@ vim sstk/server/config/index.js
 vim> config.annDb = { host: 'localhost', user: 'root', password: 'PASSWORD', database: 'scannet' };
 ```
 Change the user name and password to yours.
+
 3. Run server:
 ```
 cd SSTK/server/
